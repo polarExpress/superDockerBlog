@@ -1,0 +1,19 @@
+admin:
+  build: ./admin
+  ports:
+    - "80"
+
+blog:
+  build: ./blog
+  ports:
+    - "80"
+
+nginx:
+  build: ./nginx
+  ports:
+    - "80:80"
+
+mongodb:
+  build: ./mongo
+  ports:
+    - "27017"

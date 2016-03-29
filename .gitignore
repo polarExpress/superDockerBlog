@@ -1,0 +1,10 @@
+blog/node_modules
+npm-debug.log
+blog/static
+admin/static
+admin/node_modules
+blog/tests/test.js
+admin/tests/test.js
+admin/public/bower_components
+blog/public/bower_components
+blog/bower_components

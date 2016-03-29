@@ -1,0 +1,35 @@
+.postsView {
+  padding-top: 20px;
+}
+
+.panel-body {
+  background: white;
+}
+
+.postsTitle {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.createPostBtn {
+  float: right;
+  margin-right: 2px;
+  .btn {
+    background: #1E8BC3;
+    color: #F7CA18;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-weight: 100;
+  }
+}
+
+.logoutBtn {
+  float: right;
+  .btn {
+    background: #1E8BC3;
+    color: #F7CA18;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-weight: 100;
+  }
+}

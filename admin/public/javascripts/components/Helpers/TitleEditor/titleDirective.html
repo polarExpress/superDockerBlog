@@ -1,0 +1,20 @@
+<div>
+  <div class="mainPostTitle jumbotron">
+    <h1>{{title}} &nbsp;
+      <i ng-hide="editingTitle" ng-click="editTitle()" class="fa fa-edit"></i>
+    </h1>
+    <br>
+    <div class="row">
+      <div class="col-xs-3"></div>
+      <div class="input-group col-xs-6" ng-hide="!editingTitle">
+        <input class="form-control" type="text" ng-model="title">
+        <span class="input-group-btn">
+          <button class="btn btn-primary btn-block" ng-click="saveTitle()">
+            Save
+          </button>
+        </span>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+  </div>
+</div>

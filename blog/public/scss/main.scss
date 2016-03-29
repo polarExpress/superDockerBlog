@@ -1,0 +1,25 @@
+@import 'variables';
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900);
+
+html {
+  min-height: 100%;
+  font-family: $font;
+  position: relative;
+}
+
+body {
+  height: 100%;
+  width: auto;
+  font-family: $font;
+  overflow: auto;
+  //padding-top: 54px;
+  margin-bottom: 60px;
+  background: $light-gray;
+}
+
+@import 'footer';
+@import 'navbar';
+@import 'buttons';
+@import 'comments';
+@import 'post';
+@import 'home';

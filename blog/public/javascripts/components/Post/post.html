@@ -1,0 +1,11 @@
+<div>
+
+	<div class="jumbotron mainPostTitle">
+	  <h1>{{post.title}}</h1>
+	</div>
+
+	<div data-ng-bind-html="trustAsHtml(postHtml)"></div>
+
+	<comments-box comments="comments" user="user" post="post"></comments-box>
+
+</div>

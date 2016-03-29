@@ -1,0 +1,34 @@
+admin:
+  extends:
+    file: common.yml
+    service: admin
+  command: 'run start:development'
+  links:
+    - mongodb
+  volumes:
+    - ./admin:/admin
+  environment:
+    - NODE_ENV=development
+
+blog:
+  extends:
+    file: common.yml
+    service: blog
+  command: 'run start:development'
+  volumes:
+    - ./blog:/blog
+  environment:
+    - NODE_ENV=development
+
+mongodb:
+  extends:
+    file: common.yml
+    service: mongodb
+
+nginx:
+  extends:
+    file: common.yml
+    service: nginx
+  links:
+    - admin
+    - blog

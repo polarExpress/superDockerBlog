@@ -1,0 +1,26 @@
+<div>
+	<div class="blog-header">
+    <div class="container">
+      <h1 class="blog-title">Blog</h1>
+    </div>
+  </div>
+
+	<div id="no-posts" ng-show="!posts">
+		<h1>There is no posts!</h1>
+	</div>
+
+	<div class="container postContainer" ng-repeat="post in posts">
+		<div class="row">
+			<div class="col-md-10">
+				<h2 class="post-title">{{post.title}}</h2>
+			</div>
+			<div class="col-md-2">
+				<a href="#/posts/{{post._id}}">
+					<button class="light-blue-round-button">
+						<i class="fa fa-plus"></i>
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

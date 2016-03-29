@@ -1,0 +1,20 @@
+.modalStyle {
+  .modal-header {
+    border: none;
+    border-bottom: 3px solid $blue;
+  }
+  .modal-footer {
+    border: none;
+    border-top: 3px solid $blue;
+  }
+  .modal-title {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 300;
+  }
+}
+
+.elementPickerList {
+  list-style: none;
+  padding: 0;
+}

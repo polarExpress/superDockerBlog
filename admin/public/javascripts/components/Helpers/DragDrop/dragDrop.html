@@ -1,0 +1,34 @@
+<div class="dragDropList">
+  <ul dnd-list="elements.list">
+    <div ng-repeat="item in elements.list"
+        dnd-draggable="item"
+        dnd-disable-if="activeEdit"
+        dnd-moved="elements.list.splice($index, 1)"
+        dnd-effect-allowed="move"
+        dnd-selected="elements.selected = item"
+        ng-class="{'selected': elements.selected === item}">
+
+        <div class="topBar">
+					<div class="topBarButtons">
+            <i ng-click="editElement(item)" class="fa fa-pencil-square-o"></i>
+            <i ng-click="deleteElement(item)" class="fa fa-trash-o"></i>
+					</div>
+				</div>
+
+        <div data-ng-bind-html="trustAsHtml(item.html)"></div>
+
+        <div class="elementEditor" ng-if="activeEdit === item.id">
+          <div class="editorSaveButton">
+            <button type="button" ng-click="saveEdit(item)" class="btn btn-default blue-button">
+              Save
+            </button>
+          </div>
+          <div id="{{item.id}}" text-angular ng-model="item.html"></div>
+        </div>
+
+    </div>
+    <li class="dndPlaceholder">
+      <h1>Drop element here</h1>
+    </li>
+  </ul>
+</div>

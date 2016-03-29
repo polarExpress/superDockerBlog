@@ -1,0 +1,81 @@
+<div>
+
+  <div class="commentsTitle" ng-show="user">
+    <h2 class="container">Add a comment</h2>
+  </div>
+
+  <div class="container commentBox" ng-show="user">
+    <div class="col-md-8">
+      <textarea ng-model="commentBody" placeholder="Comment" class="commentTextarea form-control" rows="5"></textarea>
+    </div>
+    <div class="col-md-4">
+      <button type="submit" class="btn light-blue-button" ng-click="addComment()">
+        Send a comment!
+      </button>
+    </div>
+  </div>
+
+  <div class="commentsTitle" ng-show="user">
+    <h2 class="container">Comments</h2>
+    <p class="container">
+      User: {{user}}
+      Comments: {{comments}}
+    </p>
+  </div>
+
+  <div class="container panel panel-default" ng-repeat="comment in comments">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-8">
+          <h3 class="panel-title" ng-model="comment.author">Author: {{comment.author}}</h3>
+        </div>
+
+        <div class="col-md-2">
+          <button
+            type="button"
+            class="btn btn-default"
+            ng-show="!editingComment && (user === comment.author)"
+            ng-click="editComment(comment)"
+            name="button">
+          Edit comment
+        </button>
+        </div>
+        <div class="col-md-2">
+          <button
+            type="button"
+            class="btn btn-danger"
+            ng-show="!editingComment && (user === comment.author)"
+            ng-click="deleteComment(comment)"
+            name="button">
+          Delete comment
+        </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel-body">
+    <p ng-show="!editingComment">
+      {{comment.body}}
+    </p>
+    <textarea
+      ng-show="(editingComment === comment._id) && (user === comment.author)"
+      ng-model="comment.body"
+      class="form-control"
+      type="text"
+      name="name"
+      rows="3">
+      {{comment.body}}
+    </textarea>
+    </div>
+    <div class="panel-footer">
+      <button
+        type="button"
+        ng-show="(editingComment === comment._id) && (user === comment.author)"
+        ng-click="saveEdit()"
+        class="btn btn-default">
+        Save comment
+      </button>
+    </div>
+  </div>
+</div>

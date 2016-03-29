@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="loginTitle">
+    <h1>Login</h1>
+  </div>
+
+  <form class="loginForm" ng-submit="logIn()">
+
+    <label for="username">
+      Username
+    </label>
+
+    <div class="form-group loginUsername">
+      <input type="text"
+      name="username"
+      class="form-control"
+      placeholder="Username"
+      ng-model="user.username"></input>
+    </div>
+
+    <label for="password">
+      Password
+    </label>
+
+    <div class="form-group loginPassword">
+      <input type="password"
+      name="password"
+      class="form-control"
+      placeholder="Password"
+      ng-model="user.password"></input>
+    </div>
+
+    <button type="submit" class="btn btn-primary loginButton">Log In</button>
+
+  </form>
+
+  <div class="loginRegisterLink">
+    <a ui-sref="register">Go to register form</a>
+  </div>
+</div>
